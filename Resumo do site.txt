@@ -1,0 +1,12 @@
+validações de tipos utilizando o modo strict
+Organize melhor seu projeto Angular utilizando módulos
+conhecendo o Lazy Loading
+formulários simples com módulo de Formulários Template Driven
+Formulários Reativos
+validações síncronas e assíncronas para seus formulários
+utilizar token JWT no seu projeto Angular
+componentes reutilizáveis e melhorar sua produtividade
+realizar a operação de upload de fotos no seu front-end
+utilizando serviços do tipo Resolve
+Controle o fluxo de navegação do seu usuário com guarda de rotas
+requisições da sua aplicação criando serviços do tipo Interceptor
