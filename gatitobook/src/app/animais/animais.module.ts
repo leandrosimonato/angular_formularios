@@ -7,8 +7,8 @@ import { CartaoModule } from './../componentes/cartao/cartao.module';
 import { GradeFotosAnimaisComponent } from './grade-fotos-animais/grade-fotos-animais.component';
 import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.component';
 import { ComentariosComponent } from './detalhes-animal/comentarios/comentarios.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MensagemModule } from './../componentes/mensagem/mensagem.module';
+import { SharedModule } from './../shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +19,11 @@ import { MensagemModule } from './../componentes/mensagem/mensagem.module';
     ComentariosComponent,
   ],
   imports: [
-    CommonModule,
+
+  CommonModule,
     AnimaisRoutingModule,
     CartaoModule,
-    MensagemModule,
-    ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [],
 })
