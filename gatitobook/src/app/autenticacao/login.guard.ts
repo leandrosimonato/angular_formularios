@@ -11,16 +11,11 @@ import {
 import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario/usuario.service';
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class LoginGuard implements CanLoad {
-
-  constructor(
-    private usuarioService: UsuarioService,
-    private router: Router
-  ) {}
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 
   canLoad(
     route: Route,
@@ -33,8 +28,8 @@ export class LoginGuard implements CanLoad {
     if (this.usuarioService.estaLogado()) {
       this.router.navigate(['animais']);
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   }
 }

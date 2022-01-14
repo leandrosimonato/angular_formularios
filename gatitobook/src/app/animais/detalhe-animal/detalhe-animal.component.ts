@@ -35,7 +35,7 @@ export class DetalheAnimalComponent implements OnInit {
   excluir() {
     this.animaisService.excluiAnimal(this.animalId).subscribe(
       () => {
-        this.router.navigate(['/animais']);
+        this.router.navigate(['/animais/']);
       },
       (error) => console.log(error)
     );

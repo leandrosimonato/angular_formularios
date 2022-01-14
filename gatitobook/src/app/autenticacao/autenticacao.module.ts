@@ -6,13 +6,12 @@ import { AutenticacaoInterceptor } from './autenticacao.interceptor';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-
-providers: [
+  providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AutenticacaoInterceptor,
       multi: true,
-    }
-  ]
+    },
+  ],
 })
 export class AutenticacaoModule {}

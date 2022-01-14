@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { Animais, Animal } from './animais';
-import { TokenService } from './../autenticacao/token.service';
-import { environment } from 'src/environments/environment';
 import { catchError, mapTo } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { TokenService } from '../autenticacao/token.service';
+import { Animais, Animal } from './animais';
 
 const API = environment.apiURL;
 const NOT_MODIFIED = '304';
@@ -16,7 +16,7 @@ export class AnimaisService {
   constructor(private http: HttpClient, private tokenService: TokenService) {}
 
   listaDoUsuario(nomeDoUsuario: string): Observable<Animais> {
-    return this.http.get<Animais>(`${API}/${nomeDoUsuario}/photos`, {});
+    return this.http.get<Animais>(`${API}/${nomeDoUsuario}/photos`);
   }
 
   buscaPorID(id: number): Observable<Animal> {

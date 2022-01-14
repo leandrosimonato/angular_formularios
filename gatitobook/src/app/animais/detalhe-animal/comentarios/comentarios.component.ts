@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ComentariosService } from './comentarios.service';
-import { Comentarios } from './comentarios';
 import { switchMap, tap } from 'rxjs/operators';
+import { Comentarios } from './comentarios';
+import { ComentariosService } from './comentarios.service';
 
 @Component({
   selector: 'app-comentarios',
@@ -12,7 +12,6 @@ import { switchMap, tap } from 'rxjs/operators';
 })
 export class ComentariosComponent implements OnInit {
   @Input() id!: number;
-
   comentarios$!: Observable<Comentarios>;
   comentarioForm!: FormGroup;
 
@@ -36,7 +35,7 @@ export class ComentariosComponent implements OnInit {
         switchMap(() => this.comentariosService.buscaComentario(this.id)),
         tap(() => {
           this.comentarioForm.reset();
-          alert('Comentário Salvo!');
+          alert('Salvo Comentário');
         })
       );
   }

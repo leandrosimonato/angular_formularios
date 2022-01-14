@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { NovoUsuario } from './novo-usuario';
 
 const API = environment.apiURL;
+
 @Injectable({
   providedIn: 'root',
 })

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, CanLoad } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AutenticacaoGuard } from './autenticacao/autenticacao.guard';
 import { LoginGuard } from './autenticacao/login.guard';
 
@@ -18,14 +18,12 @@ const routes: Routes = [
     path: 'animais',
     loadChildren: () =>
       import('./animais/animais.module').then((m) => m.AnimaisModule),
-      canLoad: [AutenticacaoGuard],
+    canLoad: [AutenticacaoGuard],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
-
-exports: [RouterModule],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

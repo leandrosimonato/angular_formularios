@@ -22,6 +22,7 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
       const headers = new HttpHeaders().append('x-access-token', token);
       request = request.clone({ headers });
     }
+
     return next.handle(request);
   }
 }

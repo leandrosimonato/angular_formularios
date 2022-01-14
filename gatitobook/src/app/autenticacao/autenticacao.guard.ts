@@ -15,10 +15,8 @@ import { UsuarioService } from './usuario/usuario.service';
   providedIn: 'root',
 })
 export class AutenticacaoGuard implements CanLoad {
-  constructor(
-      private usuarioService: UsuarioService,
-      private router: Router,
-    ) {}
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
+
   canLoad(
     route: Route,
     segments: UrlSegment[]
@@ -30,8 +28,8 @@ export class AutenticacaoGuard implements CanLoad {
     if (!this.usuarioService.estaLogado()) {
       this.router.navigate(['']);
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   }
 }
